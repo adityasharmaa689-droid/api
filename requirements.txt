@@ -1,0 +1,16 @@
+Flask
+Flask[async]
+Flask-Cors
+protobuf
+pycryptodome
+httpx
+cachetools
+gunicorn
+requests
+apscheduler
+Pillow
+google
+aiohttp
+rich
+pytz
+python-dotenv

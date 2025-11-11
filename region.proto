@@ -1,0 +1,88 @@
+syntax = "proto3";
+package freefire;
+
+message AccountInfoBasic {
+  uint64 account_id = 1;
+  string nickname = 3;
+  string region = 5;
+  uint32 level = 6;
+  uint32 exp = 7;
+  uint32 banner_id = 11;
+  uint32 head_pic = 12;
+  uint32 ranking_points = 15;
+  uint32 celebrity_status = 16;
+  bool has_elite_pass = 17;
+  uint32 badge_cnt = 18;
+  uint32 badge_id = 19;
+  uint32 liked = 21;
+  int64 last_login_at = 24;
+  uint32 cs_ranking_points = 31;
+  repeated uint32 weapon_skin_shows = 32;
+  uint32 pin_id = 33;
+  uint32 title = 48;
+  string release_version = 50;
+  bool evo_pass = 60;
+  PrimeLevel prime_level = 76;
+}
+
+message PrimeLevel {
+  uint64 uid = 1;
+  uint32 level = 2;
+}
+
+message AvatarProfile {
+  uint32 avatar_id = 1;
+  repeated uint32 clothes = 4;
+  repeated uint32 equiped_skills = 5;
+}
+
+message ClanInfoBasic {
+  uint64 clan_id = 1;
+  string clan_name = 2;
+  uint64 captain_id = 3;
+  uint32 capacity = 5;
+  uint32 member_num = 6;
+}
+
+message PetInfo {
+  uint32 id = 1;
+  string name = 2;
+  uint32 level = 3;
+  uint32 exp = 4;
+  bool is_selected = 5;
+}
+
+message SocialBasicInfo {
+  string signature = 9;
+}
+
+message CreditScoreInfoBasic {
+  uint32 credit_score = 1;
+}
+
+message Data {
+  int64 account_id = 1;
+  bytes language = 2;
+}
+
+message Response {
+  map_data map = 1;
+}
+
+message map_data {
+  map_info map_direction = 4;
+}
+
+message map_info {
+  string map_code = 44;
+}
+
+message AccountPersonalShowInfo {
+  AccountInfoBasic basic_info = 1;
+  AvatarProfile profile_info = 2;
+  ClanInfoBasic clan_basic_info = 6;
+  AccountInfoBasic captain_basic_info = 7;
+  PetInfo pet_info = 8;
+  SocialBasicInfo social_info = 9;
+  CreditScoreInfoBasic credit_score_info = 11;
+}
